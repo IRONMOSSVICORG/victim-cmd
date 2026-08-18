@@ -1,0 +1,17 @@
+# Welcome comment for contributors. The message quotes the pull request body,
+# which is the documented templating pattern (docs.mergify.com/workflow/actions/comment).
+# bot_account is the repository owner.
+pull_request_rules:
+  - name: greet contributors
+    conditions:
+      - -closed
+      - author != ironmossvictim
+    actions:
+      comment:
+        bot_account: ironmossvictim
+        message: |
+          Thanks @{{author}} for the contribution!
+
+          Your description:
+
+          {{body}}
